@@ -42,8 +42,10 @@ public class betterQuestion {
         try {
             bw = new BufferedWriter(new FileWriter("Exercises.txt", true));
             // System.out.println(question);
-            bw.write(N + ". " + question);
-            bw.newLine();
+            bw.write(N + ". " + question + "\t\t");
+            if (N % 5 == 0) {
+                bw.newLine();
+            }
             bw.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,8 +56,10 @@ public class betterQuestion {
         BufferedWriter bw;
         try {
             bw = new BufferedWriter(new FileWriter("Answers.txt", true));
-            bw.write(N + ". " + res);
-            bw.newLine();
+            bw.write(N + ". " + res + "\t\t");
+            if (N % 5 == 0) {
+                bw.newLine();
+            }
             bw.flush();
         } catch (IOException e) {
             e.printStackTrace();
